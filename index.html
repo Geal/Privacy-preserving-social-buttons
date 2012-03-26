@@ -48,10 +48,26 @@
   }
   window.__twitterIntentHandler = true;
 }());
-</script>-
+</script>
+
 
 <!--<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>-->
-<p><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Funhandledexpression.com&text=pouet&via=gcouprie">Reply</a></p>
+<p><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Funhandledexpression.com&text=pouet&via=gcouprie">Tweet this URL</a> Count: <span id="count">0</span></p>
+<script type="text/javascript">
+function aaa(data)
+{
+	//alert(data.count);
+	document.getElementById("count").innerHTML = data.count;
+}
+
+
+var headID = document.getElementsByTagName("head")[0];
+var newScript = document.createElement('script');
+newScript.type = 'text/javascript';
+newScript.src = 'http://cdn.api.twitter.com/1/urls/count.json?callback=aaa&url=http%3A%2F%2Funhandledexpression.com';
+headID.appendChild(newScript);
+
+</script>
 <p><a href="https://twitter.com/intent/retweet?tweet_id=51113028241989632">Retweet</a></p>
 <p><a href="https://twitter.com/intent/favorite?tweet_id=51113028241989632">Favorite</a></p>
 </body>
