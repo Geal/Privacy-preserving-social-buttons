@@ -83,5 +83,40 @@ xhr.onreadystatechange = function() {
 xhr.open("GET","http://api.facebook.com/restserver.php?method=links.getStats&urls=unhandledexpression.com",true);
 xhr.send(null);
 </script>
+
+<p><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Funhandledexpression.com&t=Unhandled%20Expression">Google+ share</a> Count: <span id="gpluscount">0</span></p>
+<g:plusone></g:plusone>
+
+<script type="text/javascript">
+  window.___gcfg = {
+	lang: 'en-US'
+  };
+
+  (function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!--
+<script type="text/javascript">
+var url = "http%3A%2F%2Funhandledexpression.com";
+var payload = "[ {\"apiVersion\": \"v1\", \"id\" : \"p\", \"jsonrpc\" : \"2.0\", \"key\" : \"p\", \"method\"  : \"pos.plusones.get\", \"params\"  : [   \"nolog\" : \"true\",\"id\" : \"http%3A%2F%2Ftestupide.net\", \"source\" : 'widget', \"container\" : \"http%3A%2F%2Ftestupide.net\", \"userId\" : \"@viewer\", \"groupId\" : \"@self\"] }]";
+var xhr2 = new XMLHttpRequest();
+//
+xhr2.onreadystatechange = function() {
+        if(this.readyState == 4){
+			//var xmldata = xhr.responseXML;
+			//var count = xmldata.getElementsByTagName("like_count")[0].textContent;
+            document.getElementById("gpluscount").innerText =  xhr2.responseXML;
+        }
+};
+
+xhr2.open("POST","https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ", false);
+xhr2.setRequestHeader("Content-type", "text-plain");
+xhr2.setRequestHeader("X-Referer", "testupide.net");
+xhr2.send(payload);
+</script>
+-->
 </body>
 </html>
