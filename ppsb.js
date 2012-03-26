@@ -21,26 +21,37 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  */
-(function () {
-	function mygetElementsByClassName(classname) {
-		if (document.getElementsByClassName)
-			return document.getElementsByClassName(classname);
-		else {
-			var classElements = new Array();
-			var els = document.getElementsByTagName("*");
-			var elsLen = els.length;
-			var pattern = new RegExp("(^|\\s)"+classname+"(\\s|$)");
-			for (i = 0, j = 0; i < elsLen; i++) {
-				if ( pattern.test(els[i].className) ) {
-					classElements[j] = els[i];
-					j++;
-				}
-			}
-			return classElements;
-		}
-	}
-}());
+//(function () {
+    function mygetElementsByClassName(classname) {
+        if (document.getElementsByClassName)
+            return document.getElementsByClassName(classname);
+        else {
+            var classElements = new Array();
+            var els = document.getElementsByTagName("*");
+            var elsLen = els.length;
+            var pattern = new RegExp("(^|\\s)"+classname+"(\\s|$)");
+            for (i = 0, j = 0; i < elsLen; i++) {
+                if ( pattern.test(els[i].className) ) {
+                    classElements[j] = els[i];
+                    j++;
+                }
+            }
+            return classElements;
+        }
+    }
+    var twitterNodes = mygetElementsByClassName("pp-twitter");
+    for(var i = 0; i< twitterNodes.length; i++){
+        var node = twitterNodes[i];
+        node.onclick = function(){
+        var url = "https://twitter.com/intent/tweet?url=http%3A%2F%2Funhandledexpression.com&text=pouet&via=gcouprie";
+        var windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
+        var width = 550;
+        var height = 420;
+        window.open(url, 'intent', windowOptions + ',width=' + width +
+                                           ',height=' + height);// + ',left=' + left + ',top=' + top);
+        };
+    };
 
 
