@@ -68,7 +68,20 @@ newScript.src = 'http://cdn.api.twitter.com/1/urls/count.json?callback=aaa&url=h
 headID.appendChild(newScript);
 
 </script>
-<p><a href="https://twitter.com/intent/retweet?tweet_id=51113028241989632">Retweet</a></p>
-<p><a href="https://twitter.com/intent/favorite?tweet_id=51113028241989632">Favorite</a></p>
+
+<p><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Funhandledexpression.com&t=Unhandled%20Expression">Facebook share</a> Count: <span id="fbcount">0</span></p>
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function() {
+        if(this.readyState == 4){
+			var xmldata = xhr.responseXML;
+			var count = xmldata.getElementsByTagName("like_count")[0].textContent;
+            document.getElementById("fbcount").innerHTML = count;
+        }
+};
+xhr.open("GET","http://api.facebook.com/restserver.php?method=links.getStats&urls=unhandledexpression.com",true);
+xhr.send(null);
+</script>
 </body>
 </html>
