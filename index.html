@@ -1,9 +1,10 @@
 <html>
 <head>
 	<title>Privacy preserving social buttons</title>
+    <script type="text/javascript" src="ppsb.js" />
 </head>
 <body>
-
+<!--
 <script type="text/javascript">
 (function() {
   if (window.__twitterIntentHandler) return;
@@ -52,7 +53,7 @@
 
 
 <!--<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>-->
-<p><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Funhandledexpression.com&text=pouet&via=gcouprie">Tweet this URL</a> Count: <span id="count">0</span></p>
+<!--<p><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Funhandledexpression.com&text=pouet&via=gcouprie">Tweet this URL</a> Count: <span id="count">0</span></p>
 <script type="text/javascript">
 function aaa(data)
 {
@@ -69,7 +70,7 @@ headID.appendChild(newScript);
 
 </script>
 
-<p><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Funhandledexpression.com&t=Unhandled%20Expression">Facebook share</a> Count: <span id="fbcount">0</span></p>
+<p><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Funhandledexpression.com&t=Unhandled%20Expression">Facebook share</a> Count: <span id="fbcount" class="pouet">0</span></p>
 <script type="text/javascript">
 var xhr = new XMLHttpRequest();
 
@@ -121,5 +122,25 @@ xhr2.setRequestHeader("Content-type", "application/json");
 xhr2.send(payload);
 </script>
 
+<a href="http://www.reddit.com/submit" onclick="window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent('http://unhandledexpression.com'); return false"> <img src="http://www.reddit.com/static/spreddit1.gif" alt="submit to reddit" border="0" /> </a>
+-->
+<p class="pouet"></p>
+<a class="pouet">aaa</a>
+<!--
+<script type="text/javascript">
+var nodes = mygetElementsByClassName("pouet");
+alert(nodes);
+</script>-->
+
+<p>
+<input type="submit" class="pp-twitter" value="clickme" />
+</p>
+
+<script type="text/javascript">
+    var twitterNodes = mygetElementsByClassName("pp-twitter");
+    for(node in twitterNodes) {
+        node.onchange = function() {alert('pouet');};
+    }
+</script>
 </body>
 </html>
