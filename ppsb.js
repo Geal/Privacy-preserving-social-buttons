@@ -74,3 +74,19 @@
         console.log(node.attributes["data-url"].value);
     };
 
+    var facebookNodes = mygetElementsByClassName("pp-facebook");
+    for(var i = 0; i< facebookNodes.length; i++){
+        var node = facebookNodes[i];
+        var dataUrl = node.attributes["data-url"].value;
+        var dataVia = node.attributes["data-via"].value;
+        var dataText = node.attributes["data-text"].value;
+        node.onclick = function(){
+        var url = "https://www.facebook.com/sharer.php?u="+dataUrl+"&t="+dataText;
+        var windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
+        var width = 550;
+        var height = 420;
+        window.open(url, 'intent', windowOptions + ',width=' + width +
+                                           ',height=' + height);// + ',left=' + left + ',top=' + top);
+        };
+        console.log(node.attributes["data-url"].value);
+    };
