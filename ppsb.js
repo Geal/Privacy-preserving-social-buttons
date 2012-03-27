@@ -43,6 +43,19 @@
     }
 
     function addHandler(cssClass, urlCreator) {
+        var windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
+        var width = 550;
+        var height = 420;
+        var winHeight = screen.height;
+        var winWidth = screen.width;
+
+        left = Math.round((winWidth / 2) - (width / 2));
+        top = 0;
+
+        if (winHeight > height) {
+            top = Math.round((winHeight / 2) - (height / 2));
+        }
+
         var nodes = mygetElementsByClassName(cssClass);
         for(var i = 0; i< nodes.length; i++){
             var node = nodes[i];
@@ -51,11 +64,9 @@
             var dataText = node.attributes["data-text"].value;
             node.onclick = function(){
             var url = urlCreator(dataUrl, dataVia, dataText);
-            var windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
-            var width = 550;
-            var height = 420;
+
             window.open(url, 'intent', windowOptions + ',width=' + width +
-                            ',height=' + height);
+                            ',height=' + height+ ',left=' + left + ',top=' + top);
             };
         }
     }
