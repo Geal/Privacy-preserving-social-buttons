@@ -5,7 +5,7 @@ The social networks provide easy ways to integrate with their services and share
 
 This library will help you overcome those risks by proposing an emulation of those social buttons with a script and CSS that you can store on your server. They're as easy to integrate as Twitter buttons (they use unobstrusive Javascript and data-* attributes).
 
-For now, the library provides Twitter, Facebook and Reddit buttons. More will be added soon. As there is no way to share an URL on Google+ without loading an iframe on Google's servers, I don't recommend using it (I may add it later, though, for sake of completeness).
+For now, the library provides Twitter, Facebook, Reddit and Google+ buttons. More will be added soon. Be aware that these are sharing buttons, not "Like" or "+1". If anyone knows a way to emulate them without loading an iframe to their servers, feel free to tell me (or better, send me a patch!).
 
 
 Usage
@@ -16,11 +16,13 @@ Usage
         <link rel="stylesheet" type="text/css" href="css/twitter.css" />
         <link rel="stylesheet" type="text/css" href="css/reddit.css" />
         <link rel="stylesheet" type="text/css" href="css/facebook.css" />
+        <link rel="stylesheet" type="text/css" href="css/gplus.css" />
     </head>
     <body>
         <span class="pp-twitter"  data-url="http%3A%2F%2Funhandledexpression.com" data-via="gcouprie" data-text="blog">clickme</span>
         <span class="pp-reddit"   data-url="http%3A%2F%2Funhandledexpression.com" data-via="gcouprie" data-text="blog">clickme</span>
         <span class="pp-facebook" data-url="http%3A%2F%2Funhandledexpression.com" data-via="gcouprie" data-text="blog">clickme</span>
+        <span class="pp-gplus"    data-url="http%3A%2F%2Funhandledexpression.com" data-via="gcouprie" data-text="blog">clickme</span>
         <script type="text/javascript" src="ppsb.js"></script>
     </body>
 </html>

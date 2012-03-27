@@ -74,3 +74,4 @@
     addHandler("pp-twitter",  function(url, via, text) { return "https://twitter.com/intent/tweet?url="+url+"&text="+text+"&via="+via } );
     addHandler("pp-facebook", function(url, via, text) { return "https://www.facebook.com/sharer.php?u="+url+"&t="+text } );
     addHandler("pp-reddit",   function(url, via, text) { return "http://www.reddit.com/submit?url="+url+"&title="+text } );
+    addHandler("pp-gplus",    function(url, via, text) { return "https://plusone.google.com/_/+1/confirm?hl=en-US&url="+url+"&source=widget&referer="+url } );
