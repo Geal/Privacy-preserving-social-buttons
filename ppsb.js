@@ -41,13 +41,15 @@
             return classElements;
         }
     }
+
     var twitterNodes = mygetElementsByClassName("pp-twitter");
     for(var i = 0; i< twitterNodes.length; i++){
         var node = twitterNodes[i];
         var dataUrl = node.attributes["data-url"].value;
         var dataVia = node.attributes["data-via"].value;
+        var dataText = node.attributes["data-text"].value;
         node.onclick = function(){
-        var url = "https://twitter.com/intent/tweet?url="+dataUrl+"&text=pouet&via="+dataVia;
+        var url = "https://twitter.com/intent/tweet?url="+dataUrl+"&text="+dataText+"&via="+dataVia;
         var windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
         var width = 550;
         var height = 420;
