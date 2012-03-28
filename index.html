@@ -43,34 +43,69 @@
     </div>
 
     <h1><a href="https://github.com/Geal/Privacy-preserving-social-buttons">Privacy-preserving-social-buttons</a>
-      <span class="small">by <a href="https://github.com/Geal">Geal</a></span></h1>
+      <span class="small">by <a href="https://github.com/Geal">Geoffroy Couprie</a></span></h1>
 
     <div class="description">
-      Protect your users with shiny social buttons
+      Social yet safe.
     </div>
+    <p>The social networks provide easy ways to integrate with their services and share content on their platform, often under the appearance of a button. They provide some code easy to integrate in pages to include those buttons. But these pieces of code include foreign Javascript files in your page and make calls to unknown webservices to load the button code. They're a security risk (you don't know the code in those files), a privacy risk (even without clicking the social buttons, the script loading is traced) and they slow the page laoding.</p>
 
-    
-      <p>Shiny!</p>
-    
+    <p>This library will help you overcome those risks by proposing an emulation of those social buttons with a script and CSS that you can store on your server. They're as easy to integrate as Twitter buttons (they use unobstrusive Javascript and data-* attributes).</p>
 
-    
+    <p>For now, the library provides Twitter, Facebook, Reddit and Google+ buttons. More will be added soon. Be aware that these are sharing buttons, not "Like" or "+1". If anyone knows a way to emulate them without loading an iframe to their servers, feel free to tell me (or better, send me a patch!).</p>
 
-    
-
-    
-      <h2>License</h2>
-      <p>MIT</p>
-    
-
-    
-      <h2>Authors</h2>
-      <p>Geoffroy Couprie (geo.couprie@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Geoffroy Couprie (geo.couprie@gmail.com)<br/>      </p>
-    
+    <h2>Usage</h2>
+    <p>
+<pre style='color:#d1d1d1;background:#000000;'><span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>Privacy preserving social buttons<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>link</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"stylesheet"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"text/css"</span> href<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"css/twitter.css"</span> <span style='color:#ff8906; '>/></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>link</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"stylesheet"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"text/css"</span> href<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"css/reddit.css"</span> <span style='color:#ff8906; '>/></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>link</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"stylesheet"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"text/css"</span> href<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"css/facebook.css"</span> <span style='color:#ff8906; '>/></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>link</span> rel<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"stylesheet"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"text/css"</span> href<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"css/gplus.css"</span> <span style='color:#ff8906; '>/></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>span</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"pp-twitter"</span>
+          data-url<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons"</span>
+          data-via<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"gcouprie"</span> data-text<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"blog"</span><span style='color:#ff8906; '>></span>clickme<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>span</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>span</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"pp-reddit"</span>
+          data-url<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons"</span>
+          data-via<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"gcouprie"</span> data-text<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"blog"</span><span style='color:#ff8906; '>></span>clickme<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>span</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>span</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"pp-facebook"</span>
+          data-url<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons"</span>
+          data-via<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"gcouprie"</span> data-text<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"blog"</span><span style='color:#ff8906; '>></span>clickme<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>span</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>span</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"pp-gplus"</span>
+          data-url<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons"</span>
+          data-via<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"gcouprie"</span> data-text<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"blog"</span><span style='color:#ff8906; '>></span>clickme<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>span</span><span style='color:#ff8906; '>></span>
+      <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>script</span> type<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"text/javascript"</span> src<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"ppsb.js"</span></span><span style='color:#ff8906; '>></span><span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>script</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#ff8906; '>></span>
+  <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#ff8906; '>></span>
+</pre>
+  <pre>  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Privacy preserving social buttons&lt;/title&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/twitter.css&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/reddit.css&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/facebook.css&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/gplus.css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;span class=&quot;pp-twitter&quot;
+          data-url=&quot;https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons&quot;
+          data-via=&quot;gcouprie&quot; data-text=&quot;blog&quot;&gt;clickme&lt;/span&gt;
+      &lt;span class=&quot;pp-reddit&quot;
+          data-url=&quot;https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons&quot;
+          data-via=&quot;gcouprie&quot; data-text=&quot;blog&quot;&gt;clickme&lt;/span&gt;
+      &lt;span class=&quot;pp-facebook&quot;
+          data-url=&quot;https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons&quot;
+          data-via=&quot;gcouprie&quot; data-text=&quot;blog&quot;&gt;clickme&lt;/span&gt;
+      &lt;span class=&quot;pp-gplus&quot;
+          data-url=&quot;https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons&quot;
+          data-via=&quot;gcouprie&quot; data-text=&quot;blog&quot;&gt;clickme&lt;/span&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;ppsb.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre>
+    </p>
 
     <h2>Download</h2>
     <p>
