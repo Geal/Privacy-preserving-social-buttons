@@ -25,5 +25,8 @@ Usage
         <span class="pp-gplus"    data-url="http%3A%2F%2Funhandledexpression.com" data-via="gcouprie" data-text="blog">clickme</span>
         <script type="text/javascript" src="ppsb.js"></script>
     </body>
-</html>
+    </html>
 
+License
+-------
+MIT
