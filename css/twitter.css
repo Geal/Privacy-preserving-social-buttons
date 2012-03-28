@@ -1,0 +1,27 @@
+.pp-twitter {
+	display: inline-block;
+	padding: 0 3px 0 19px;
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	white-space: nowrap;
+	
+	font: 11px/1.7 "Helvetica Neue",Arial,sans-serif;
+	background: url("../img/twit.gif"), -moz-linear-gradient(center top , #FFFFFF, #DEDEDE);
+	background: url("../img/twit.gif"), -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#DEDEDE));
+	background-repeat: no-repeat;
+
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 3px 3px 3px;
+	color: #333333;
+	float: left;
+	font-weight: bold;
+	height: 17px;
+	outline: medium none;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	//vertical-align: top;
+	white-space: nowrap;
+}

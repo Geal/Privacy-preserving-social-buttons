@@ -1,0 +1,20 @@
+.pp-gplus {
+    background: -moz-linear-gradient(center top , #FFFFFF, #DEDEDE);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#DEDEDE));
+    background-color: #ECEEF5;
+    border-color: #CAD4E7;
+    border: 1px solid;
+    border-radius: 3px 3px 3px 3px;
+    display: block;
+    float: left;
+    padding: 0px 5px 5px 5px;
+    height: 10px;
+    color: #BA3420;
+    cursor: pointer;
+    text-decoration: none;
+    border-spacing: 0;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: normal;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}

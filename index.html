@@ -4,7 +4,10 @@
   <meta charset='utf-8'>
 
   <title>Geal/Privacy-preserving-social-buttons @ GitHub</title>
-
+  <link rel="stylesheet" type="text/css" href="css/twitter.css" />
+    <link rel="stylesheet" type="text/css" href="css/reddit.css" />
+    <link rel="stylesheet" type="text/css" href="css/facebook.css" />
+    <link rel="stylesheet" type="text/css" href="css/gplus.css" />
   <style type="text/css">
     body {
       margin-top: 1.0em;
@@ -27,6 +30,13 @@
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    li {
+      list-style-type:none;
+      margin-top: 20px;
+      padding-right: 10px;
+      display: inline-block;
+    }
+
   </style>
 </head>
 
@@ -48,6 +58,15 @@
     <div class="description">
       Social yet safe.
     </div>
+    <p>
+	<ul>
+    <li><span class="pp-twitter"  data-url="https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons" data-via="gcouprie" data-text="Protect your users with social buttons">Tweet Me!</span></li>
+    <li><span class="pp-reddit"   data-url="https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons" data-via="gcouprie" data-text="Protect your users with social buttons">Reddit Me!</span></li>
+    <li><span class="pp-facebook" data-url="https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons" data-via="gcouprie" data-text="Protect your users with social buttons">Face Me!</span></li>
+    <li><span class="pp-gplus"    data-url="https%3A%2F%2Fgithub.com%2FGeal%2FPrivacy-preserving-social-buttons" data-via="gcouprie" data-text="Protect your users with social buttons">Plus Me!</span></li>
+    </ul>
+    <script type="text/javascript" src="ppsb.js"></script>
+    </p>
     <p>The social networks provide easy ways to integrate with their services and share content on their platform, often under the appearance of a button. They provide some code easy to integrate in pages to include those buttons. But these pieces of code include foreign Javascript files in your page and make calls to unknown webservices to load the button code. They're a security risk (you don't know the code in those files), a privacy risk (even without clicking the social buttons, the script loading is traced) and they slow the page laoding.</p>
 
     <p>This library will help you overcome those risks by proposing an emulation of those social buttons with a script and CSS that you can store on your server. They're as easy to integrate as Twitter buttons (they use unobstrusive Javascript and data-* attributes).</p>
