@@ -62,12 +62,18 @@
             var dataUrl = node.attributes["data-url"].value;
             var dataVia = node.attributes["data-via"].value;
             var dataText = node.attributes["data-text"].value;
-            node.onclick = function(){
-            var url = urlCreator(dataUrl, dataVia, dataText);
+            function popup(){
+                var url = urlCreator(dataUrl, dataVia, dataText);
 
-            window.open(url, 'intent', windowOptions + ',width=' + width +
+                window.open(url, 'intent', windowOptions + ',width=' + width +
                             ',height=' + height+ ',left=' + left + ',top=' + top);
             };
+
+            if (node.addEventListener) {
+                node.addEventListener('click', popup, false);
+            } else if (node.attachEvent) {
+                node.attachEvent('onclick', popup);
+            }
         }
     }
 
